@@ -1,5 +1,6 @@
 package com.demo;
-class LineDemo1
+
+class LineDemo
 {
 
 	int x1;
@@ -32,12 +33,16 @@ class LineDemo1
 	int y2;
 	public  double distance()
 	{
+
 		return Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
-	    
-	    
+
+
 	}
-	
+
 }
+
+
+
 
 
 package com.demo;
@@ -48,8 +53,8 @@ public class LineMain
 {
 	public static void main(String[] args) {
 		Scanner sc=new Scanner(System.in);
-		LineDemo1 obj=new LineDemo1();
-	    
+		LineDemo obj=new LineDemo();
+
 		System.out.println("--------------Line1 Values-------------");
 		System.out.println("enter x1 value : ");
 		int x1=sc.nextInt();
@@ -63,8 +68,8 @@ public class LineMain
 		System.out.println("enter y2 value : ");
 		int y2=sc.nextInt();
 		obj.setY2(y2);
-		
-		LineDemo1 obj1=new LineDemo1();
+
+		LineDemo obj1=new LineDemo();
 		System.out.println("--------------Line2 Values-------------");
 		System.out.println("enter x1 value : ");
 		int a=sc.nextInt();
@@ -75,35 +80,40 @@ public class LineMain
 		System.out.println("enter x2 value : ");
 		int b=sc.nextInt();
 		obj1.setX2(b);
-		
+
 		System.out.println("enter y2 value : ");
 		int d=sc.nextInt();
 		obj1.setY2(d);
-		
+
 		sc.close();
 		double d1=obj1.distance();
 		double d2=obj.distance();
-		equal(d1, d2);
+		compare(d1, d2);
 	}
-	public static void equal(double a,double b)
+	public static void compare(double a,double b)
 	{
-	    
-	    //converting method in double to string
-	        String x=Double.toString(a);
-            String y=Double.toString(b);
-        
-        //comparing both the string values using compareTo method
-            if(x.equals(y))
-    		{
-    			System.out.println("equal");
-    		}
-    		else{
-    			System.out.println("Not equal");
-    		}
-		
-	    
-	   
-}
 
-	
+		//converting method in double to string
+		String x=Double.toString(a);
+		String y=Double.toString(b);
+
+		//comparing both the string values using compareTo method
+		double c=x.compareTo(y);
+		System.out.println(c);
+		if(c == 0)
+		{
+			System.out.println("equal");
+		}
+		else if(c < 0 ){
+			System.out.println(" Line1 is lesser and Line2 is greater ");
+		}
+		else{
+			System.out.println("Line1 is greater and Line2 is lesser");
+		}
+
+
+
+	}
+
+
 }
