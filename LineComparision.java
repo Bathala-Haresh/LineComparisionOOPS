@@ -1,5 +1,6 @@
 package com.demo;
 
+
 class LineDemo
 {
 
@@ -40,9 +41,6 @@ class LineDemo
 	}
 
 }
-
-
-
 
 
 package com.demo;
@@ -89,6 +87,9 @@ public class LineMain
 		double d1=obj1.distance();
 		double d2=obj.distance();
 		compare(d1, d2);
+		equal(d1, d2);
+                obj.distance();
+
 	}
 	public static void compare(double a,double b)
 	{
@@ -110,10 +111,21 @@ public class LineMain
 		else{
 			System.out.println("Line1 is greater and Line2 is lesser");
 		}
-
-
-
 	}
+	public static void equal(double a,double b)
+	{
 
+		//converting method in double to string
+		String x=Double.toString(a);
+		String y=Double.toString(b);
 
+		//comparing both the string values using compareTo method
+		if(x.equals(y))
+		{
+			System.out.println("equal");
+		}
+		else{
+			System.out.println("Not equal");
+		}
+	}
 }
